@@ -242,6 +242,26 @@ var createReferenceFile = function(filename, list){
 };
 
 /**
+ * Creates the CSS file by gathering CSS files on dir
+ *
+ * @param filename
+ * @param dir
+ */
+var createCssFile = function(filename, dir){
+
+    var files = walk(dir, '.css');
+    var content = '';
+
+    for (var i = 0; i < files.length; i++) {
+        content += "/* " + path.basename(files[i]) + " */" + EOL;
+        content += fs.readFileSync(files[i]) + EOL;
+    }
+
+    if(String(content).length > 0)
+        fs.writeFileSync(filename, content);
+};
+
+/**
  * Compiles the specified tsFile, directing output to outputFile
  * @param outputFile
  * @param tsFile
@@ -273,3 +293,6 @@ compile(outputFile, tmp, function(){
     fs.unlinkSync(tmp);
 
 });
+
+// Concatenate CSS
+createCssFile(path.join(path.dirname(outputFile), path.basename(outputFile, '.js')) + '.css', dirToWalk);
