@@ -15,6 +15,6 @@ node make [ts-files-folder] [output-javascript-file]
 If CSS files are found on the directory, they will be also concatenated into one single
 with the same name of the JavaScript file.
 
-##More
+##About
 - More information on TypeScript: http://typescriptlang.org
 - Developed by http://menendezpoo.com for http://goplek.com
