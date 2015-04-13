@@ -16,5 +16,5 @@ If CSS files are found on the directory, they will be also concatenated into one
 with the same name of the JavaScript file.
 
 ##More
-More information on TypeScript: http://typescriptlang.org
-Developed by http://menendezpoo.com for http://goplek.com
+- More information on TypeScript: http://typescriptlang.org
+- Developed by http://menendezpoo.com for http://goplek.com
